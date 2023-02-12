@@ -11,8 +11,8 @@ require('smtp/PHPMailerAutoload.php');
     		$datetime = date('Y-m-d H:i:s');
     		$sender_ip=$_SERVER["REMOTE_ADDR"];
     		$subject="New Lead : $name $last_name";
-    		$headers='From: Toronto Assignments <noreply@torontoassignments.com>' . "\r\n" . 'Content-type: text/html; charset=UTF-8' . "\r\n" . 'MIME-Version: 1.0' . "\r\n";
-    		$to="deepak1king1@gmail.com";
+    		$headers='From: Toronto Assignments <noreply@exmplegmail.com>' . "\r\n" . 'Content-type: text/html; charset=UTF-8' . "\r\n" . 'MIME-Version: 1.0' . "\r\n";
+    		$to="testing@gmail.com";
     		//$to="govindmaurya87@gmail.com";
     		$message_body="Hi, <br/><br/>
     
@@ -23,7 +23,7 @@ require('smtp/PHPMailerAutoload.php');
     		<b>Phone:</b> $number<br/><br/>
     		<b>Message:</b> $message<br/><br/>
     		<b>Project:</b> Assignment Lead <br/><br/>
-    		<b>Page URL:</b>https://torontoassignments.com/list/<br/><br/>
+    		<b>Page URL:</b>https://exmple.com<br/><br/>
     		<b>Sender IP:</b> $sender_ip<br/><br/>";
 
 			if(isset($message_body)){
@@ -49,7 +49,7 @@ require('smtp/PHPMailerAutoload.php');
     		<b>Email:</b> $email <br/><br/>
     		<b>Phone:</b> $phone <br/><br/>
     		<b>Project:</b> $project<br/><br/>
-    		<b>Page URL:</b>https://torontoassignments.com/list/<br/><br/>";
+    		<b>Page URL:</b>https://exmple.com<br/><br/>";
     // 		<b>Sender IP:</b> $sender_ip<br/><br/>
     // 		<b>Message:</b> $message<br/><br/>
     		
@@ -77,24 +77,16 @@ function smtp_mailer($email,$subject, $message_body){
 	$mail->Port = "587"; 
 	$mail->IsHTML(true);
 	$mail->CharSet = 'UTF-8';
-	$mail->Username = "listing@torontoassignments.com";
-	$mail->Password = 'Newpassword@1';
+	$mail->Username = "Self_mail";
+	$mail->Password = 'Password';
 
 	
 
 	
-	$mail->setFrom("listing@torontoassignments.com" , "Toronto Assignments");
+	$mail->setFrom("Self_mail" , "Indeed");
 	$mail->Subject = $subject;
 	$mail->Body = $message_body;
-    $mail->addAddress('sundeep@realestatesolution.ca');
-    $mail->addAddress('tim@realestatesolution.ca');
-    $mail->addAddress('sundeepbahl9followupboss.me');
-    $mail->addAddress('john@realestategame.com');
-    $mail->addAddress('info@realestatesolution.ca');
-    $mail->addAddress('shweta@ppcstud.io');
-    $mail->addAddress('reallead.ca@gmail.com');
-    $mail->addAddress('dr.sidharat@gmail.com');
-    $mail->addAddress('sundeepbahl9@followupboss.me');
+    $mail->addAddress('alter@gmail.com');
 	if(!$mail->Send()){
 		echo $mail->ErrorInfo;
 	}else{
