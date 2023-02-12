@@ -13,7 +13,6 @@ require('smtp/PHPMailerAutoload.php');
     		$subject="New Lead : $name $last_name";
     		$headers='From: Toronto Assignments <noreply@exmplegmail.com>' . "\r\n" . 'Content-type: text/html; charset=UTF-8' . "\r\n" . 'MIME-Version: 1.0' . "\r\n";
     		$to="testing@gmail.com";
-    		//$to="govindmaurya87@gmail.com";
     		$message_body="Hi, <br/><br/>
     
     		You received an enquiry from your website .Detail are given below:<br/><br/>
@@ -90,7 +89,7 @@ function smtp_mailer($email,$subject, $message_body){
 	if(!$mail->Send()){
 		echo $mail->ErrorInfo;
 	}else{
-		header('location: https://torontoassignments.com/list/thanks.php');
+		header('location: www.google.com');
 		exit();
 	}
 }
